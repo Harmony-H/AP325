@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int eval() {
+	string token;
+	cin >> token;
+
+	if(token == "f") {
+		return 2*eval()-1;
+	}
+	else if(token == "g") {
+		int x = eval();
+		int y = eval();
+		return x + 2*y - 3;
+	}
+	else {
+		return stoi(token);
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+
+	cout<<eval();
+	return 0;
+}
