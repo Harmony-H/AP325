@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+string s;
+int idx=0;
+int count_black_pixels(int n) {
+    char curent_char=s[idx];
+    idx++;
+	if(curent_char=='1') return n*n;
+	else if(curent_char=='0') return 0;
+	else {
+		return count_black_pixels(n/2)+count_black_pixels(n/2)+count_black_pixels(n/2)+count_black_pixels(n/2);
+	}
+}
+int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0);
+	int n;
+	cin>>s>>n;
+	cout<<count_black_pixels(n);
+	return 0;
+}
